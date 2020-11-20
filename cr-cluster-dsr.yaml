@@ -1,0 +1,18 @@
+apiVersion: "kubedirector.hpe.com/v1beta1"
+kind: "KubeDirectorCluster"
+metadata:
+  name: "dsr"
+spec:
+  app: dsr
+  roles:
+  - id: node
+    members: 1
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+    storage:
+      size: "40Gi"
