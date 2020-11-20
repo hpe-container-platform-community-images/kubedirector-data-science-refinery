@@ -1,0 +1,15 @@
+#!/bin/env bash
+### Error for wrong option handled ###
+if [[ "$1" == "--addnodes" ]] || [[ "$1" == "--delnodes" ]] || [[ "$1" == "--configure" ]]; then
+  echo "Valid values. So execute the later code"
+else
+  echo "ERROR: Unknown command line option(s): '$@'"
+  exit 10
+fi
+
+NODE_ID=$(configcli namespace node id)
+FQDN=$(configcli namespace node fqdn)
+
+#if [[ "$NODE_ID" == "1" ]]; then
+#   /opt/nifi-1.12.1/bin/nifi.sh start
+#fi
