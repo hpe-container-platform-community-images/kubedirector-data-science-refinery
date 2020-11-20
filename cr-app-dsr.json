@@ -1,0 +1,56 @@
+{
+    "apiVersion": "kubedirector.hpe.com/v1beta1",
+    "kind": "KubeDirectorApp",
+    "metadata": {
+        "name" : "dsr"
+    },
+    "spec" : {
+        "systemdRequired": true,
+        "defaultPersistDirs" : ["/home"],
+        "defaultEventList" : ["configure", "addnodes", "delnodes"],
+        "config": {
+            "roleServices": [
+                {
+                    "serviceIDs": [
+                        "http"
+                    ],
+                    "roleID": "node"
+                }
+            ],
+            "selectedRoles": [
+                "node"
+            ]
+        },
+        "label": {
+            "name": "Data Science Refinery",
+            "description": "Data Science Refinery"
+        },
+        "distroID": "kubedirector/dsr",
+        "version": "0.1",
+        "configSchemaVersion": 7,
+        "services": [
+            {
+                "endpoint": {
+                    "urlScheme": "http",
+                    "path": "/",
+                    "port": 9995,
+                    "isDashboard": true
+                },
+                "id": "http",
+                "label": {
+                    "name": "http"
+                }
+            }
+        ],
+        "defaultImageRepoTag": "maprtech/data-science-refinery:v1.4.1_6.1.0_6.3.0_centos7",
+        "defaultConfigPackage": {
+            "packageURL": "https://github.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
+        },
+        "roles": [
+            {
+                "cardinality": "1",
+                "id": "node"
+            }
+        ]
+    }
+}
