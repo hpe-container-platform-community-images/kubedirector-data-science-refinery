@@ -2,9 +2,9 @@
 
 set -x
 
-echo *******
+echo #######
 echo $$
-echo ******
+echo #######
 
 ##if [ "$$" = 1 ]; then
     #
