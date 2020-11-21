@@ -9,6 +9,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dsr-config
+  labels:
+    kubedirector.hpe.com/cmType : dsr-config
 data:
   dsr.properties: |
     MAPR_CLUSTER=datafabric
