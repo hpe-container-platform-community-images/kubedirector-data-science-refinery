@@ -13,7 +13,7 @@ metadata:
     kubedirector.hpe.com/cmType : dsr-config
 data:
   dsr.properties: |
-    MAPR_CLUSTER=datafabric
+    MAPR_CLUSTER=hcp.mapr.cluster
     MAPR_CLDB_HOSTS=10.1.0.230
     MAPR_CONTAINER_USER=mapr
     MAPR_CONTAINER_GROUP=mapr
