@@ -19,8 +19,9 @@ data:
     MAPR_CONTAINER_GROUP=mapr
     MAPR_CONTAINER_UID=5000
     MAPR_CONTAINER_GID=5000
+    # TODO: move MAPR_TICKET to a secret
     MAPR_TICKET=xxxxx
-    MAPR_TICKETFILE_LOCATION=/tmp/ticket/longlived_ticket
+    MAPR_TICKETFILE_LOCATION=/tmp/longlived_ticket
     ZEPPELIN_DEPLOY_MODE=kubernetes
     MAPR_CONTAINER_PASSWORD=mapr
 ```
