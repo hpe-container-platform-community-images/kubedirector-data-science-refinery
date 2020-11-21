@@ -15,4 +15,4 @@ eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print j
 
 echo $MAPR_TICKET > $MAPR_TICKETFILE_LOCATION
 
-bash -x /entrypoint.sh
+bash -x ./entrypoint.sh
