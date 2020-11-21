@@ -10,6 +10,7 @@ fi
 NODE_ID=$(configcli namespace node id)
 FQDN=$(configcli namespace node fqdn)
 
-#if [[ "$NODE_ID" == "1" ]]; then
-#   /opt/nifi-1.12.1/bin/nifi.sh start
-#fi
+# TODO: using eval is not secure - need to safely parse variables
+eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)["connections"]["configmaps"]["dsr-config"][0]["data"]["dsr.properties"]')
+
+bash /entrypoint.sh
