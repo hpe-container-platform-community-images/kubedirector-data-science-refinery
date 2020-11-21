@@ -4,6 +4,9 @@ metadata:
   name: "dsr"
 spec:
   app: dsr
+  connections:
+    configmaps:
+    - "dsr-config"
   roles:
   - id: node
     members: 1
