@@ -5,7 +5,7 @@
         "name" : "dsr"
     },
     "spec" : {
-        "systemdRequired": true,
+        "systemdRequired": false,
         "defaultPersistDirs" : ["/home"],
         "defaultEventList" : ["configure"],
         "config": {
