@@ -12,7 +12,7 @@
             "roleServices": [
                 {
                     "serviceIDs": [
-                        "http"
+                        "https"
                     ],
                     "roleID": "node"
                 }
@@ -31,14 +31,14 @@
         "services": [
             {
                 "endpoint": {
-                    "urlScheme": "http",
+                    "urlScheme": "https",
                     "path": "/",
                     "port": 9995,
                     "isDashboard": true
                 },
-                "id": "http",
+                "id": "https",
                 "label": {
-                    "name": "http"
+                    "name": "https"
                 }
             }
         ],
