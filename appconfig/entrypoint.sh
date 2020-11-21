@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -x
+
+echo *******
+echo $$
+echo ******
+
 if [ "$$" = 1 ]; then
     #
     # Setup envinronment for Kubernetes deployment.
