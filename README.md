@@ -9,7 +9,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: dsr-config
-  namespace: default
 data:
   dsr.properties: |
     MAPR_CLUSTER=datafabric
