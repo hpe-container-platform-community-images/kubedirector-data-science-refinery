@@ -42,7 +42,7 @@
                 }
             }
         ],
-        "defaultImageRepoTag": "maprtech/data-science-refinery:v1.4.1_6.1.0_6.3.0_centos7",
+        "defaultImageRepoTag": "snowch/kubedirector-data-science-refinery:latest",
         "defaultConfigPackage": {
             "packageURL": "https://github.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
         },
