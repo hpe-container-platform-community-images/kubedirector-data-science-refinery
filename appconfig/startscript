@@ -13,4 +13,6 @@ FQDN=$(configcli namespace node fqdn)
 # TODO: using eval is not secure - need to safely parse variables
 eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)["connections"]["configmaps"]["dsr-config"][0]["data"]["dsr.properties"]')
 
+echo $MAPR_TICKET > $MAPR_TICKETFILE_LOCATION
+
 bash /entrypoint.sh
