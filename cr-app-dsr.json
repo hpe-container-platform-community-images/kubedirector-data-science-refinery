@@ -8,6 +8,10 @@
         "systemdRequired": false,
         "defaultPersistDirs" : ["/home"],
         "defaultEventList" : ["configure"],
+        "capabilities" : [
+            "SYS_ADMIN",
+            "SYS_RESOURCE"
+        ],
         "config": {
             "roleServices": [
                 {
