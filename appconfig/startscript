@@ -1,7 +1,10 @@
 #!/bin/env bash
-### Error for wrong option handled ###
-if [[ "$1" == "--addnodes" ]] || [[ "$1" == "--delnodes" ]] || [[ "$1" == "--configure" ]]; then
-  echo "Valid values. So execute the later code"
+
+set -x
+set -e
+
+if [[ "$1" == "--configure" ]]; then
+  echo "Running startscript with --configure option"
 else
   echo "ERROR: Unknown command line option(s): '$@'"
   exit 10
@@ -12,6 +15,19 @@ FQDN=$(configcli namespace node fqdn)
 
 # TODO: using eval is not secure - need to safely parse variables
 eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)["connections"]["configmaps"]["dsr-config"][0]["data"]["dsr.properties"]')
+
+echo ******************************************************
+echo MAPR_CLUSTER=$MAPR_CLUSTER
+echo MAPR_CLDB_HOSTS=$MAPR_CLDB_HOSTS
+echo MAPR_CONTAINER_USER=$MAPR_CONTAINER_USER
+echo MAPR_CONTAINER_PASSWORD=$MAPR_CONTAINER_PASSWORD
+echo MAPR_CONTAINER_GROUP=$MAPR_CONTAINER_GROUP
+echo MAPR_CONTAINER_UID=$MAPR_CONTAINER_UID
+echo MAPR_CONTAINER_GID=$MAPR_CONTAINER_GID
+echo MAPR_TICKET=$MAPR_TICKET
+echo MAPR_TICKETFILE_LOCATION=$MAPR_TICKETFILE_LOCATION
+echo ZEPPELIN_DEPLOY_MODE=$ZEPPELIN_DEPLOY_MODE
+echo ******************************************************
 
 echo $MAPR_TICKET > $MAPR_TICKETFILE_LOCATION
 
