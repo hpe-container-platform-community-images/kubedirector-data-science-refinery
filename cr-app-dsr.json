@@ -7,7 +7,7 @@
     "spec" : {
         "systemdRequired": true,
         "defaultPersistDirs" : ["/home"],
-        "defaultEventList" : ["configure", "addnodes", "delnodes"],
+        "defaultEventList" : ["configure"],
         "config": {
             "roleServices": [
                 {
@@ -49,7 +49,8 @@
         "roles": [
             {
                 "cardinality": "1",
-                "id": "node"
+                "id": "node",
+                "eventList": ["configure"]
             }
         ]
     }
