@@ -16,6 +16,7 @@ FQDN=$(configcli namespace node fqdn)
 # TODO: using eval is not secure - need to safely parse variables
 eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)["connections"]["configmaps"]["dsr-config"][0]["data"]["dsr.properties"]')
 
+export HOST_IP=$FQDN
 
 export MAPR_CLUSTER
 export MAPR_CLDB_HOSTS
@@ -30,6 +31,7 @@ export ZEPPELIN_DEPLOY_MODE
 
 
 echo "******************************************************"
+echo HOST_IP=$HOST_IP
 echo MAPR_CLUSTER=$MAPR_CLUSTER
 echo MAPR_CLDB_HOSTS=$MAPR_CLDB_HOSTS
 echo MAPR_CONTAINER_USER=$MAPR_CONTAINER_USER
