@@ -48,3 +48,8 @@ data:
 ```console
 kubectl apply -f https://raw.githubusercontent.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/main/cr-cluster-dsr.yaml
 ```
+
+### Step 5. Access Zeppelin UI
+
+You can click the link in the services endpoint to access the Zeppelin UI.  
+If you receive a HTTP error try again in a few minutes.
