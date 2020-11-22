@@ -43,7 +43,7 @@ data:
     MAPR_CONTAINER_PASSWORD=mapr
 ```
 
-### Step 2. Create the KD Cluster
+### Step 4. Create the KD Cluster
 
 ```console
 kubectl apply -f https://raw.githubusercontent.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/main/cr-cluster-dsr.yaml
