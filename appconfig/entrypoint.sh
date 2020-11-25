@@ -7,7 +7,7 @@ echo #######
 echo $$
 echo #######
 
-##if [ "$$" = 1 ]; then
+if [[ $EUID -eq 0 ]]; then
     #
     # Setup envinronment for Kubernetes deployment.
     #
@@ -24,7 +24,7 @@ echo #######
         export MAPR_TZ="UTC"
     fi
 
-##    if [ -e /mnt/mapr-cluster-secret ]; then
+    if [ -e /mnt/mapr-cluster-secret ]; then
         MAPR_CONTAINER_USER=${MAPR_CONTAINER_USER:-$MAPR_USER}
         MAPR_CONTAINER_USER=${MAPR_CONTAINER_USER:-$(cat "/mnt/mapr-cluster-secret/MAPR_CONTAINER_USER" 2>/dev/null)}
         MAPR_CONTAINER_USER=${MAPR_CONTAINER_USER:-$(cat "/mnt/mapr-cluster-secret/MAPR_USER" 2>/dev/null)}
@@ -68,7 +68,7 @@ echo #######
         mapr_tickefile="/mnt/mapr-cluster-secret/CONTAINER_TICKET"
         MAPR_TICKETFILE_LOCATION=${MAPR_TICKETFILE_LOCATION:-$([ -e "$mapr_tickefile" ] && echo "$mapr_tickefile")}
         [ -n "$MAPR_TICKETFILE_LOCATION" ] && export MAPR_TICKETFILE_LOCATION
-##    fi
+    fi
 
 
     if echo "$ZEPPELIN_PORT" | grep -q "^tcp"; then
@@ -100,7 +100,7 @@ echo #######
     # Following piece copied from "container_post_client" function of "mapr-setup.sh"
     exec sudo -E -H -n -u $MAPR_CONTAINER_USER \
         -g ${MAPR_CONTAINER_GROUP:-$MAPR_GROUP} "$0" "$@"
-##fi
+fi
 
 
 
