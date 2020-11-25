@@ -14,7 +14,7 @@ NODE_ID=$(configcli namespace node id)
 FQDN=$(configcli namespace node fqdn)
 
 # TODO: using eval is not secure - need to safely parse variables
-eval $(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)["connections"]["configmaps"]["dsr-config"][0]["data"]["dsr.properties"]')
+eval "$(cat /etc/guestconfig/configmeta.json | python -c 'import json,sys;print json.load(sys.stdin)[\"connections\"][\"configmaps\"][\"dsr-config\"][0][\"data\"][\"dsr.properties\"]')"
 
 export HOST_IP=$FQDN
 
@@ -46,4 +46,6 @@ echo "******************************************************"
 
 echo $MAPR_TICKET | base64 -d > $MAPR_TICKETFILE_LOCATION
 
-bash -x ./entrypoint.sh
+chmod a+x /opt/guestconfig/appconfig/entrypoint.sh
+
+bash -x /opt/guestconfig/appconfig/entrypoint.sh
