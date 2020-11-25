@@ -35,13 +35,15 @@ data:
     # You shouldn't need to edit the variables below
     #   
     MAPR_CONTAINER_USER=mapr
+    MAPR_CONTAINER_PASSWORD=mapr
     MAPR_CONTAINER_GROUP=mapr
     MAPR_CONTAINER_UID=5000
     MAPR_CONTAINER_GID=5000
     MAPR_TICKETFILE_LOCATION=/tmp/longlived_ticket
     ZEPPELIN_DEPLOY_MODE=kubernetes
-    MAPR_CONTAINER_PASSWORD=mapr
 ```
+
+IMPORTANT: Ensure the folder `/user/$MAPR_CONTAINER_USER` exists on the Data Fabric - by default it doesn't exist on the HPE Container Platform embedded Data Fabric.
 
 ### Step 4. Create the KD Cluster
 
