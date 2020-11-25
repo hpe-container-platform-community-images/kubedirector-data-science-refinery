@@ -44,6 +44,6 @@ echo MAPR_TICKETFILE_LOCATION=$MAPR_TICKETFILE_LOCATION
 echo ZEPPELIN_DEPLOY_MODE=$ZEPPELIN_DEPLOY_MODE
 echo "******************************************************"
 
-echo $MAPR_TICKET > $MAPR_TICKETFILE_LOCATION
+echo $MAPR_TICKET | base64 -d > $MAPR_TICKETFILE_LOCATION
 
 bash -x ./entrypoint.sh
