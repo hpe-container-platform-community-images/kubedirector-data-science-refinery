@@ -48,7 +48,7 @@
         ],
         "defaultImageRepoTag": "snowch/kubedirector-data-science-refinery:latest",
         "defaultConfigPackage": {
-            "packageURL": "https://github.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
+            "packageURL": "https://github.com/hpe-container-platform-community-images/kubedirector-data-science-refinery/releases/download/0.1/appconfig.tgz"
         },
         "roles": [
             {
