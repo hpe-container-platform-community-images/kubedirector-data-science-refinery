@@ -29,7 +29,7 @@ data:
     # Edit the variables below
     #   
     MAPR_CLUSTER=hcp.mapr.cluster
-    MAPR_TICKET=xxxxx
+    MAPR_TICKET=xxx_base64_encoded_xxx
     MAPR_CLDB_HOSTS=10.1.0.230
     #   
     # You shouldn't need to edit the variables below
